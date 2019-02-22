@@ -6,12 +6,6 @@ function callDivNodeJSChange() {
 	var url = 'http://developer.cege.ucl.ac.uk/' + httpPortNumber;
 	xhrNode.open("GET", url, true);
 	xhrNode.onreadystatechange = processDivNodeJSChange;
-	try {
-		xhrNode.setRequestHeader("Content-Type", "application/x-www-formurlencoded");
-	}
-	catch (e) {
-	// this only works in internet explorer
-	}
 	xhrNode.send();
 }
 
