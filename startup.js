@@ -1,8 +1,5 @@
-function trackAndCircle(){
-	alert('Tracking location and Drawing shapes');
-	trackLocation();
-	addShapes();
-	getEarthquakes();
+function loadW3HTML(){
+	w3.includeHTML();
 }
 
 function startup(){
@@ -10,9 +7,13 @@ function startup(){
 		zoomOnMap();
 	},false);
 	document.addEventListener('DOMContentLoaded',function(){
-		trackAndCircle();
+		trackLocation();
 	},false);
 	document.addEventListener('DOMContentLoaded',function(){
 		getPort();
 	},false);
+	document.addEventListener('DOMContentLoaded',function(){
+		loadW3HTML();
+	},false);
 }
+
