@@ -29,12 +29,6 @@ function getFormData(){
 	client.send();
 }
 
-function getEarthquakes(){
-	client = new XMLHttpRequest();
-	client.open('GET','https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson');
-	client.onreadystatechange = earthquakeResponse;
-	client.send();
-
 function earthquakeResponse(){
 	if (client.readyState == 4){
 		var earthquakedata=client.responseText;
