@@ -24,17 +24,16 @@ function addShapes(){
 
 function getFormData(){
 	client = new XMLHttpRequest();
-	var url = 'http://developer.cege.ucl.ac.uk:'+httpPortNumber+'/getFormData/'+httpPortNumber
-	client.open("GET", url);
+	client.open('GET','http://developer.cege.ucl.ac.uk:'+httpPortNumber+'/getFormData/'+httpPortNumber);
 	client.onreadystatechange = earthquakeResponse;
-	try {
-		client.setRequestHeader("Content-Type", "application/x-www-formurlencoded");
-	}
-	catch (e) {
-	// this only works in internet explorer
-	}
 	client.send();
 }
+
+function getEarthquakes(){
+	client = new XMLHttpRequest();
+	client.open('GET','https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson');
+	client.onreadystatechange = earthquakeResponse;
+	client.send();
 
 function earthquakeResponse(){
 	if (client.readyState == 4){
