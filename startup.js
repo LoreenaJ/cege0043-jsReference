@@ -15,5 +15,8 @@ function startup(){
 	document.addEventListener('DOMContentLoaded',function(){
 		loadW3HTML();
 	},false);
+	document.addEventListener('DOMContentLoaded',function(){
+		getEarthquakes();
+	},false);
 }
 
