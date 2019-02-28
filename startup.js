@@ -16,7 +16,7 @@ function startup(){
 		loadW3HTML();
 	},false);
 	document.addEventListener('DOMContentLoaded',function(){
-		getEarthquakes();
+		getFormData();
 	},false);
 }
 
