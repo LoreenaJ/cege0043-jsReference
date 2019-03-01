@@ -2,6 +2,7 @@
 var xhr; 
 
 function callQuizHelp() {
+	alert('Loading the HELP file for the Quiz App');
 	xhr = new XMLHttpRequest();
 	var filename = "guide_quiz.html"
 	xhr.open("GET", filename, true);
