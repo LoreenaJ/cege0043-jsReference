@@ -1,20 +1,28 @@
 var userMarker;
 
+//zooming on the map where the user is by getting the user's position
+//if the navigator does not support geolocation, an alert appears to let the user know
 function zoomOnMap(){
-	alert('Zooming onto your position');
-	navigator.geolocation.getCurrentPosition(getPosition);
+	if(navigator.geolocation){
+		alert('Zooming onto your position')
+		navigator.geolocation.getCurrentPosition(getPosition);
+	} 
+	else{
+		alert('Geolocation is not supported by this browser.');
+	}
 }
 
+//setting the zooming scale and the map view to the user's position 
 function getPosition(position){
 	mymap.setView([position.coords.latitude, position.coords.longitude], 15);
-		}
+}
 
 function trackLocation(){
 	if(navigator.geolocation){
 		navigator.geolocation.watchPosition(showPosition);
 	}
 	else{
-		document.getElementById('showLocation').innerHTML = 'Geolocation is not supported by this browser.';
+		alert('Geolocation is not supported by this browser.';
 	}
 }
 
@@ -22,9 +30,7 @@ function showPosition(position){
 	if (userMarker){
 		mymap.removeLayer(userMarker);
 	}
-	userMarker = L.marker([position.coords.latitude,position.coords.longitude]).addTo(mymap).bindPopup("<b>You are here</b>");
-	document.getElementById('showLocation').innerHTML = 'Latitude:' + position.coords.latitude + '<br>Longitude:' + position.coords.longitude;
-	getDistance();
+	userMarker = L.marker([position.coords.latitude,position.coords.longitude]).addTo(mymap).bindPopup('Latitude: ' + position.coords.latitude + '<br>Longitude: ' + position.coords.longitude);
 }
 
 function getDistance(){
