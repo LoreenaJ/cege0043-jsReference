@@ -1,6 +1,7 @@
 var client;
 var earthquakes;
 var earthquakelayer;
+var httpPortNumber;
 
 function addShapes(){
 		L.marker([51.5,-0.09]).addTo(mymap).bindPopup("<b>Hello World!</b><br/>I am a popup.");
@@ -24,15 +25,8 @@ function addShapes(){
 
 function getFormData(){
 	client = new XMLHttpRequest();
-	var url = 'http://developer.cege.ucl.ac.uk:'+httpPortNumber+'/getFormData/'+httpPortNumber
-	client.open("GET", url);
+	client.open('GET','http://developer.cege.ucl.ac.uk:'+httpPortNumber+'/getFormData/'+httpPortNumber);
 	client.onreadystatechange = earthquakeResponse;
-	try {
-		client.setRequestHeader("Content-Type", "application/x-www-formurlencoded");
-	}
-	catch (e) {
-	// this only works in internet explorer
-	}
 	client.send();
 }
 
