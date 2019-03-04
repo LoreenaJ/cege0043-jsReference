@@ -22,7 +22,7 @@ function trackLocation(){
 		navigator.geolocation.watchPosition(showPosition);
 	}
 	else{
-		alert('Geolocation is not supported by this browser.';
+		alert('Geolocation is not supported by this browser.');
 	}
 }
 
