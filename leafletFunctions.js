@@ -1,7 +1,6 @@
 var client;
 var earthquakes;
 var earthquakelayer;
-var httpPortNumber;
 
 function addShapes(){
 		L.marker([51.5,-0.09]).addTo(mymap).bindPopup("<b>Hello World!</b><br/>I am a popup.");
