@@ -1,7 +1,4 @@
 //create a POST String with the data
-var httpPortNumber = '30282'
-var httpsPortNumber = '31082'
-
 function startDataUpload(){
 	//get the textbox values
 	var name = document.getElementById("name").value;
@@ -46,7 +43,7 @@ var client;
 function processData(postString){
 	//make a new request using the client variable
 	client = new XMLHttpRequest();
-	postString = postString+"&port_id="+httpPortNumber;
+	postString = postString+"&port_id="+hhtpPortNumber;
 	var url = 'http://developer.cege.ucl.ac.uk:'+httpPortNumber+'/uploadData/'+httpPortNumber;
 	//use the server to bounce the data back to us using /reflectData
 	client.open('POST',url,true);
