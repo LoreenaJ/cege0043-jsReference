@@ -25,7 +25,7 @@ function addShapes(){
 function getFormData(){
 	alert('Getting the data')
 	client = new XMLHttpRequest();
-	client.open('GET','http://developer.cege.ucl.ac.uk:30250/getFormData/30250');
+	client.open('GET','http://developer.cege.ucl.ac.uk:'+httpPortNumber+'/getFormData/'+httpPortNumber);
 	client.onreadystatechange = earthquakeResponse;
 	client.send();
 }
