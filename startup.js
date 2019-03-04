@@ -4,13 +4,13 @@ function loadW3HTML(){
 
 function startup(){
 	document.addEventListener('DOMContentLoaded',function(){
+		getPort();
+	},false);
+	document.addEventListener('DOMContentLoaded',function(){
 		zoomOnMap();
 	},false);
 	document.addEventListener('DOMContentLoaded',function(){
 		trackLocation();
-	},false);
-	document.addEventListener('DOMContentLoaded',function(){
-		getPort();
 	},false);
 	document.addEventListener('DOMContentLoaded',function(){
 		loadW3HTML();
