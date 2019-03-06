@@ -1,6 +1,7 @@
 var client;
 var earthquakes;
 var earthquakelayer;
+var httpPortNumber = '30282';
 
 function addShapes(){
 		L.marker([51.5,-0.09]).addTo(mymap).bindPopup("<b>Hello World!</b><br/>I am a popup.");
@@ -25,7 +26,7 @@ function addShapes(){
 function getFormData(){
 	alert('Getting the data')
 	client = new XMLHttpRequest();
-	client.open('GET','http://developer.cege.ucl.ac.uk:30282/getFormData/30282');
+	client.open('GET','http://developer.cege.ucl.ac.uk:'+httpPortNumber+'/postgistest');
 	client.onreadystatechange = earthquakeResponse;
 	client.send();
 }

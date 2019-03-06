@@ -5,7 +5,7 @@ function startDataUpload(){
 	var surname = document.getElementById("surname").value;
 	var moduletitle = document.getElementById("module").value;
 	//plave the values in a POST string to send to the server
-	var postString = "name="+name+"&surname="+surname+"&module="+moduletitle;
+	var postString = "name="+name+"&surname="+surname+"&module="+module;
 	//get the checkbox values
 	var checkString = "";
 	//loop for all boxes
@@ -38,13 +38,14 @@ function startDataUpload(){
 
 //make a global variable to hold the request
 var client;
+var httpPortNumber = '30282';
 
 //process the POST String
 function processData(postString){
 	//make a new request using the client variable
 	client = new XMLHttpRequest();
 	postString = postString+"&port_id=30282";
-	var url = 'http://developer.cege.ucl.ac.uk:30282/uploadData';
+	var url = 'http://developer.cege.ucl.ac.uk:'+httpPortNumber+'/uploadData';
 	//use the server to bounce the data back to us using /reflectData
 	client.open('POST',url,true);
 	//inform the server of the type of data
