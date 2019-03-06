@@ -44,7 +44,7 @@ function processData(postString){
 	//make a new request using the client variable
 	client = new XMLHttpRequest();
 	postString = postString+"&port_id="+hhtpPortNumber;
-	var url = 'http://developer.cege.ucl.ac.uk:'+httpPortNumber+'/uploadData/'+httpPortNumber;
+	var url = 'http://developer.cege.ucl.ac.uk:'+httpPortNumber+'/uploadData';
 	//use the server to bounce the data back to us using /reflectData
 	client.open('POST',url,true);
 	//inform the server of the type of data
