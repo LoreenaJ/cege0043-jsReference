@@ -3,7 +3,7 @@ function startDataUpload(){
 	//get the textbox values
 	var name = document.getElementById("name").value;
 	var surname = document.getElementById("surname").value;
-	var moduletitle = document.getElementById("module").value;
+	var module = document.getElementById("module").value;
 	//plave the values in a POST string to send to the server
 	var postString = "name="+name+"&surname="+surname+"&module="+module;
 	//get the checkbox values
